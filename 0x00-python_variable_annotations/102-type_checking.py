@@ -1,13 +1,18 @@
+#!/usr/bin/env python3
+""" 102. Type Checking """
+
 from typing import Tuple, List
 
 
 def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
-    """Zooms in on each element in the input tuple by repeating it 'factor' times.
+    """
+    Zooms in on each element in the input tuple by
+    repeating it 'factor' times.
 
     Args:
-        lst (Tuple): The input tuple containing elements to be zoomed in on.
-        factor (int, optional): The factor by which each element should be zoomed in.
-                                Defaults to 2.
+        lst (Tuple): containing elements to be zoomed in on.
+        factor (int, optional): The factor by which each element
+            should be zoomed in. Defaults to 2.
 
     Returns:
         Tuple: A new tuple containing the zoomed-in elements.
