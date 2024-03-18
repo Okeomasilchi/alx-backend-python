@@ -5,16 +5,13 @@ module that contains the function task_wait_random
 
 import asyncio
 from asyncio import Task
-from typing import TypeVar
 
 
-wait_random = __import__("0-basic_async_syntax").wait_random
+wait_random = __import__("0-basic_async_syntax"
+                         ).wait_random
 
 
-_T = TypeVar("_T")
-
-
-def task_wait_random(max_delay: int) -> Task[_T]:
+def task_wait_random(max_delay: int) -> Task:
     """
     Create and return a task that waits for a random
     amount of time.
