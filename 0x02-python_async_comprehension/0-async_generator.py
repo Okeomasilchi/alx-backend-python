@@ -9,7 +9,7 @@ import asyncio
 import random
 
 
-async def async_generator():
+async def async_generator() -> float:
     """
     The async_generator function asynchronously
     yields random numbers between 0 and 10 after
