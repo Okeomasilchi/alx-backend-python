@@ -65,21 +65,11 @@ class TestGetJson(unittest.TestCase):
         Test that get_json returns the expected result
         without making actual HTTP calls.
         """
-
-        # Mocking the response
         mock_response = Mock()
         mock_response.json.return_value = test_payload
         mock_get.return_value = mock_response
-
-        # Calling the get_json function
         result = get_json(test_url)
-
-        # Asserting that requests.get was called once
-        # with the correct URL
         mock_get.assert_called_once_with(test_url)
-
-        # Asserting that the output of get_json is
-        # equal to test_payload
         self.assertEqual(result, test_payload)
 
 
@@ -114,15 +104,9 @@ class TestMemoize(unittest.TestCase):
         a_property twice.
         """
         test_instance = self.TestClass()
-
-        # Call a_property twice
         result1 = test_instance.a_property
         result2 = test_instance.a_property
-
-        # Assert that a_method was only called once
         mock_a_method.assert_called_once()
-
-        # Assert that the results are equal
         self.assertEqual(result1, result2)
 
 
