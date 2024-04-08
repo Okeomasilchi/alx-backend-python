@@ -53,13 +53,13 @@ class TestGetJson(unittest.TestCase):
     """
     Test case class for testing the get_json function.
     """
-    @patch("utils.requests.get")
     @parameterized.expand(
         [
             ("http://example.com", {"payload": True}),
             ("http://holberton.io", {"payload": False}),
         ]
     )
+    @patch("utils.requests.get")
     def test_get_json(self, test_url, test_payload, mock_get):
         """
         Test that get_json returns the expected result
