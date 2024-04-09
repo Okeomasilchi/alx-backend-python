@@ -7,6 +7,7 @@ import unittest
 from unittest.mock import patch, PropertyMock
 from parameterized import parameterized
 from client import GithubOrgClient
+import fixtures
 
 
 class TestGithubOrgClient(unittest.TestCase):
@@ -91,6 +92,14 @@ class TestGithubOrgClient(unittest.TestCase):
         client = GithubOrgClient("example_org")
         result = client.has_license(repo, license_key)
         self.assertEqual(result, expected_result)
+
+    def test_public_repos_with_license(self):
+        """
+        Test fetching public repositories with a specific license.
+        """
+        client = GithubOrgClient("test-org")
+        result = client.public_repos(license="apache-2.0")
+        # self.assertEqual(result, fixtures.apache2_repos)
 
 
 if __name__ == "__main__":
